@@ -1,6 +1,7 @@
 # LayerBTC Vault Strategy Router
 
 ## Overview
+
 A modular, production-grade vault router for BTCFi protocols. It dynamically routes BTC assets (e.g., stBTC, bridged BTC, synthetic BTC) to the best-performing yield strategies (Babylon, BounceBit, etc.), supports dynamic rebalancing, and is designed for extensibility and security.
 
 ---
@@ -9,14 +10,13 @@ A modular, production-grade vault router for BTCFi protocols. It dynamically rou
 
 ![VaultStrategyRouter Architecture](image.png)
 
-
-
 - **VaultStrategyRouter**: Core contract, manages deposits, withdrawals, strategy selection, and rebalancing.
 - **Strategies**: Modular contracts (Babylon, BounceBit, etc.) implementing the `IStrategy` interface.
 
 ---
 
 ## Roles & Permissions
+
 - **ADMIN_ROLE**: Can pause/unpause, emergency withdraw, manage roles.
 - **KEEPER_ROLE**: Can trigger APY sync and rebalancing.
 - **STRATEGY_MANAGER_ROLE**: Can add/remove strategies.
@@ -24,16 +24,17 @@ A modular, production-grade vault router for BTCFi protocols. It dynamically rou
 ---
 
 ## Security Considerations
+
 - Reentrancy guards on all fund-moving functions
 - Role-based access control (RBAC) for all sensitive actions
 - Input validation and custom errors
 - Emergency pause and withdraw
 - Uses OpenZeppelin libraries for security
 
-
 ---
 
 ## Deployment & Configuration
+
 1. Deploy `MockStBTC` (BTC asset)
 2. Deploy `VaultStrategyRouter` with asset, admin, keeper
 3. Deploy strategies (Babylon, BounceBit, ...)
@@ -47,6 +48,7 @@ See `scripts/deploy.js` for an automated example.
 ---
 
 ## How Strategies Work (Mock)
+
 - Each strategy contract implements `IStrategy`.
 - APY is settable for testing; in production, would use oracles or protocol data.
 - Only the router can deposit/withdraw.
@@ -54,6 +56,7 @@ See `scripts/deploy.js` for an automated example.
 ---
 
 ## Example Test Coverage
+
 - Role-based access control (including role revocation)
 - Deposit/withdraw logic (including multi-user, edge cases, and event parameter checks)
 - Rebalancing and APY sync (including threshold logic and event emission)
@@ -64,13 +67,13 @@ See `scripts/deploy.js` for an automated example.
 ---
 
 ## Advanced & Edge-Case Test Scenarios
+
 - Multi-user deposits and withdrawals
 - Withdraw from deactivated strategies
 - Role revocation enforcement
 - Duplicate strategy add protection
 - Emergency withdraw with funds in multiple strategies
 - Event parameter correctness (using event logs)
-
 
 ---
 
@@ -104,4 +107,5 @@ See `scripts/deploy.js` for an automated example.
 ---
 
 ## License
+
 MIT

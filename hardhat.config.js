@@ -5,17 +5,17 @@ module.exports = {
   solidity: "0.8.20",
   networks: {
     hardhat: {
-      chainId: 31337
-    }
+      chainId: 31337,
+    },
   },
   paths: {
     sources: "./contracts",
     tests: "./test",
     scripts: "./scripts",
     cache: "./cache",
-    artifacts: "./artifacts"
+    artifacts: "./artifacts",
   },
   mocha: {
-    timeout: 40000
-  }
+    timeout: 40000,
+  },
 };
