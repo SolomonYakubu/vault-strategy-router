@@ -1,0 +1,15 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+.env
+.env.*
+*.log
+typechain/
+*.tsbuildinfo
+# Hardhat/Foundry/VSCode/OS-specific
+out/
+broadcast/
+*.local
+.vscode/
+.DS_Store

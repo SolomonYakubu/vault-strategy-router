@@ -1,0 +1,23 @@
+{
+  "name": "layerbtc-vault-strategy-router",
+  "version": "1.0.0",
+  "description": "BTCFi Vault Strategy Router with modular strategies and dynamic rebalancing.",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.js --network hardhat"
+  },
+  "keywords": ["solidity", "hardhat", "btcfi", "vault", "strategy", "router"],
+  "author": "LayerBTC Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@openzeppelin/contracts": "^5.0.0",
+    "chai": "^4.3.7",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^6.7.0",
+    "hardhat": "^2.20.2"
+  }
+}
+
